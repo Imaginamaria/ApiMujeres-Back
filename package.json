@@ -1,0 +1,27 @@
+{
+  "name": "apimujeres",
+  "version": "1.0.0",
+  "description": "Api de Noticias de Mujeres al Deporte",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass scss/estilos.scss css/estilos.min.css --style compressed",
+    "watch": "sass --watch scss/estilos.scss css/estilos.min.css",
+    "borrarCss": "del css/estilos.min.css"
+  },
+  "author": "Maria Etchegaray - 91061 (ORT)",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bs5-lightbox": "^1.8.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jquery": "^3.7.1",
+    "lightbox2": "^2.11.4",
+    "mongoose": "^8.4.3",
+    "nodemon": "^3.1.4",
+    "sass": "^1.77.6"
+  }
+}
