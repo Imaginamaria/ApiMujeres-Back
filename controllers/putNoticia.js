@@ -21,6 +21,8 @@ export const putNoticia =(req, res, next) =>{
     if(fecha) datosNuevos.fecha = fecha;
     if(autor) datosNuevos.autor = autor;
 
+    
+
     //modifico la noticia con el id proporcionado
 
     ModeloNoticia.updateOne({id: idNoticia}, datosNuevos)
