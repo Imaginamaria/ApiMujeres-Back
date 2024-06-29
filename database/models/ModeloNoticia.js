@@ -1,5 +1,7 @@
 import { Schema, model } from "mongoose";
 
+// definir el esquema de la colección noticias
+
 const schemaNoticia = new Schema({
     id: {type: Number, unique: true},
     categoria: String,
@@ -12,4 +14,5 @@ const schemaNoticia = new Schema({
     autor: String
 })
 
+// exportar el modelo
 export const ModeloNoticia = model("Noticia", schemaNoticia)

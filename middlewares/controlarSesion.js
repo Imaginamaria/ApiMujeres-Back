@@ -1,9 +1,11 @@
 import { ModeloUsuario } from "../database/models/ModeloUsuario.js";
 
+// middleware para controlar la sesion de los usuarios
+
 export const controlarSesion = async (req, res, next) =>{
     try{
 
-        //mandar request headers
+       // obtengo el auth header de los encabezados de la consulta
         const authHeader = req.headers["authorization"];
 
         // obtengo el auth header de los encabezados de la consulta
@@ -11,7 +13,7 @@ export const controlarSesion = async (req, res, next) =>{
             // si no encuentro ninguno, devuelvo error
             throw {statusCode: 401, message:"No autorizado - No se envio token de sesion."} 
         }
-        // busco usuario con el token del header
+        // busco usuario con el token del header en la base de datos
         const usuario = await ModeloUsuario.findOne({session: authHeader})
 
         if(usuario){

@@ -1,8 +1,10 @@
 import { ModeloUsuario } from "../database/models/ModeloUsuario.js";
 import { obtenerProximoId } from "../utils/functions.js";
 
+
+// controlador para agregar un usuario
 export const postUsuario = async (req, res, next)=>{
-    const {nombre, apellido,email, password} = req.body;
+    const {nombre, apellido, email, password} = req.body;
 
     try{
         // verificamos si ya existe un usuario con ese email
@@ -20,6 +22,8 @@ export const postUsuario = async (req, res, next)=>{
         nuevoUsuario.apellido = apellido;
         nuevoUsuario.password = password;
         nuevoUsuario.email= email;
+
+        //guardo el usuario en la base de datos
 
         nuevoUsuario.save()
         .then(()=>{
